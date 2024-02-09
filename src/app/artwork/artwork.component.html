@@ -1,0 +1,13 @@
+<h1>Hello World</h1>
+<div class="col-md-12 text-center"><form [formGroup]="toggleForm" (ngSubmit)="submitForm($event)">
+  <mat-button-toggle-group formControlName="style" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="oui" >oui</mat-button-toggle>
+    <mat-button-toggle value="non" >non</mat-button-toggle>
+  </mat-button-toggle-group>
+  <mat-form-field   *ngIf="toggleForm.get('style')?.value === 'oui'">
+    <mat-label>Favorite food</mat-label>
+    <input matInput formControlName="commentaire" placeholder="Commentaire">
+  </mat-form-field>
+  <button type="submit">Submit</button>
+</form>
+</div>
