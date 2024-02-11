@@ -1,7 +1,7 @@
 name: Build and Deploy Docker Image
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
@@ -23,7 +23,7 @@ jobs:
         run: docker build -t myapp .
 
       - name: Tag Docker image
-        run: docker tag myapp blackset/myapp:latest
+        run: docker tag myapp blackset/giant:latest
 
       - name: Push Docker image to Docker Hub
-        run: docker push blackset/myapp:latest
+        run: docker push blackset/giant:latest
